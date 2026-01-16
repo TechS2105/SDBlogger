@@ -1,0 +1,206 @@
+*{
+
+    margin: 0;
+    padding: 0;
+
+}
+
+/** Archivo Font */
+@font-face {
+    font-family: 'Archivo-Black-Bold';
+    src: url('../../fonts/unZIP/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Archivo-Bold';
+    src: url('../../fonts/unZIP/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Archivo-Extra-Bold';
+    src: url('../../fonts/unZIP/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-ExtraBold.otf');
+}
+
+@font-face {
+    font-family: 'Archivo-Regular';
+    src: url('../../fonts/unZIP/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Archivo-SemiBold';
+    src: url('../../fonts/unZIP/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-SemiBold.otf');
+}
+
+@font-face {
+    font-family: 'Archivo-Medium';
+    src: url('../../fonts/unZIP/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Medium.otf');
+}
+
+/** Chillax Font */
+@font-face {
+    font-family: 'Chillax-Bold';
+    src: url('../../fonts/unZIP/Chillax_Complete/Chillax_Complete/Fonts/OTF/Chillax-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Chillax-Medium';
+    src: url('../../fonts/unZIP/Chillax_Complete/Chillax_Complete/Fonts/OTF/Chillax-Medium.otf');
+}
+
+@font-face {
+    font-family: 'Chillax-Regular';
+    src: url('../../fonts/unZIP/Chillax_Complete/Chillax_Complete/Fonts/OTF/Chillax-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Chillax-Semibold';
+    src: url(../../fonts/unZIP/Chillax_Complete/Chillax_Complete/Fonts/OTF/Chillax-Semibold.otf);
+}
+
+/** ClashDisplay Font */
+@font-face {
+    font-family: 'ClashDisplay-Bold';
+    src: url('../../fonts/unZIP/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/OTF/ClashDisplay-Bold.otf');
+}
+
+@font-face {
+    font-family: 'ClashDisplay-Medium';
+    src: url('../../fonts/unZIP/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/OTF/ClashDisplay-Medium.otf');
+}
+
+@font-face {
+    font-family: 'ClashDisplay-Regular';
+    src: url('../../fonts/unZIP/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/OTF/ClashDisplay-Regular.otf');
+}
+
+@font-face {
+    font-family: 'ClashDisplay-Semibold';
+    src: url('../../fonts/unZIP/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/OTF/ClashDisplay-Semibold.otf');
+}
+
+/** ClashGrotesk Font */
+@font-face {
+    font-family: 'ClashGrotesk-Bold';
+    src: url('../../fonts/unZIP/ClashGrotesk_Complete/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Bold.otf');
+}
+
+@font-face {
+    font-family: 'ClashGrotesk-Medium';
+    src: url('../../fonts/unZIP/ClashGrotesk_Complete/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Medium.otf');
+}
+
+@font-face {
+    font-family: 'ClashGrotesk-Regular';
+    src: url('../../fonts/unZIP/ClashGrotesk_Complete/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Regular.otf');
+}
+
+@font-face {
+    font-family: 'ClashGrotesk-Semibold';
+    src: url('../../fonts/unZIP/ClashGrotesk_Complete/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Semibold.otf');
+}
+
+/** Panchang Fonts */
+@font-face {
+    font-family: 'Panchang-Bold';
+    src: url('../../fonts/unZIP/Panchang_Complete/Panchang_Complete/Fonts/OTF/Panchang-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Panchang-Extrabold';
+    src: url('../../fonts/unZIP/Panchang_Complete/Panchang_Complete/Fonts/OTF/Panchang-Extrabold.otf');
+}
+
+@font-face {
+    font-family: 'Panchang-Medium';
+    src: url('../../fonts/unZIP/Panchang_Complete/Panchang_Complete/Fonts/OTF/Panchang-Medium.otf');
+}
+
+@font-face {
+    font-family: 'Panchang-Regular';
+    src: url('../../fonts/unZIP/Panchang_Complete/Panchang_Complete/Fonts/OTF/Panchang-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Panchang-Semibold';
+    src: url('../../fonts/unZIP/Panchang_Complete/Panchang_Complete/Fonts/OTF/Panchang-Semibold.otf');
+}
+
+/** Stardom Font */
+@font-face {
+    font-family: 'Stardom-Regular';
+    src: url('../../fonts/unZIP/Stardom_Complete/Stardom_Complete/Fonts/OTF/Stardom-Regular.otf');
+}
+
+/** Zodiak Font */
+@font-face {
+    font-family: 'Zodiak-Black';
+    src: url('../../fonts/unZIP/Zodiak_Complete/Zodiak_Complete/Fonts/OTF/Zodiak-Black.otf');
+}
+
+@font-face {
+    font-family: 'Zodiak-Bold';
+    src: url('../../fonts/unZIP/Zodiak_Complete/Zodiak_Complete/Fonts/OTF/Zodiak-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Zodiak-Extrabold';
+    src: url('../../fonts/unZIP/Zodiak_Complete/Zodiak_Complete/Fonts/OTF/Zodiak-Extrabold.otf');
+}
+
+@font-face {
+    font-family: 'Zodiak-Regular';
+    src: url('../../fonts/unZIP/Zodiak_Complete/Zodiak_Complete/Fonts/OTF/Zodiak-Regular.otf');
+}
+
+/** Root */
+:root{
+
+    /**Navy Blue (Primary) */
+    --hex_color1: #0A2A43;
+
+    /**Sand Beige (Secondary)*/
+    --hex_color2: #DCC9A1;
+
+    /**Soft Gold (Accent)*/
+    --hex_color3: #C6A664;
+
+     /**White (Base / Content Background)*/
+    --hex_color4: #FFFFFF;
+
+    /**Charcoal Gray (Typography / UI Neutral)*/
+    --hex_color5: #2B2B2B;
+
+    /**Golder Color*/
+    --hex_color6: #ffd700;
+
+    /** Font Family */
+    --font1: 'Archivo-Black-Bold';
+    --font2: 'Archivo-Bold';
+    --font3: 'Archivo-Extra-Bold';
+    --font4: 'Archivo-Regular';
+    --font5: 'Archivo-SemiBold';
+    --font6: 'Archivo-Medium';
+    --font7: 'Chillax-Bold';
+    --font8: 'Chillax-Medium';
+    --font9: 'Chillax-Regular';
+    --font10: 'Chillax-Semibold';
+    --font11: 'ClashDisplay-Bold';
+    --font12: 'ClashDisplay-Medium';
+    --font13: 'ClashDisplay-Regular';
+    --font14: 'ClashDisplay-Semibold';
+    --font15: 'ClashGrotesk-Bold';
+    --font16: 'ClashGrotesk-Medium';
+    --font17: 'ClashGrotesk-Regular';
+    --font18: 'ClashGrotesk-Semibold';
+    --font19: 'Panchang-Bold';
+    --font20: 'Panchang-Extrabold';
+    --font21: 'Panchang-Medium';
+    --font22: 'Panchang-Regular';
+    --font23: 'Panchang-Semibold';
+    --font24: 'Stardom-Regular';
+    --font25: 'Zodiak-Black';
+    --font26: 'Zodiak-Bold';
+    --font27: 'Zodiak-Extrabold';
+    --font28: 'Zodiak-Regular';
+
+}
