@@ -13,7 +13,7 @@ const blog = [
     {
         /** Business */
         id: 1,
-        blogImage: '../../../../public/images/Business/business_blog_image1.jpeg', 
+        blogImage: '/images/Business/business_blog_image1.jpeg', 
         blogCategory: 'Business',
         blogPostType: [
 
@@ -283,7 +283,7 @@ const blog = [
 
         /** Technology */
         id: 2,
-        blogImage: '../../../../public/images/Technology/tech_blog_image1.jpeg',
+        blogImage: '/images/Technology/tech_blog_image1.jpeg',
         blogCategory: 'Technology',
         blogPostType: [
 
@@ -321,7 +321,7 @@ const blog = [
         ],
         blogSlug: 'how-ai-reshapes-core-business-operations',
         blogDate: currentDate,
-        autherName: 'Mohini Agarwal',
+        authorName: 'Mohini Agarwal',
         frontView: [
 
             {
@@ -539,7 +539,7 @@ const blog = [
 
         /** Automotive */
         id: 3,
-        blogImage: '../../../../public/images/Automotive/automotive_blog_image1.jpeg',
+        blogImage: '/images/Automotive/automotive_blog_image1.jpeg',
         blogCategory: 'Automotive',
         blogPostType: [
 
@@ -792,7 +792,7 @@ const blog = [
 
         /** Science */
         id: 4,
-        blogImage: '../../../../public/images/Science/science_blog_image1.jpeg',
+        blogImage: '/images/Science/science_blog_image1.jpeg',
         blogCategory: 'Science',
         blogPostType: [
 
@@ -1044,7 +1044,7 @@ const blog = [
 
         /** Travel */
         id: 5,
-        blogItems: '../../../../public/images/Travel/travel_blog_image1.jpeg',
+        blogImage: '/images/Travel/travel_blog_image1.jpeg',
         blogCategory: 'Travel',
         blogPostType: [
 
@@ -1300,7 +1300,7 @@ const blog = [
 
         /** Entertainment */
         id: 6,
-        blogItems: '../../../../public/images/Entertainment/entertainment_blog_image1.jpeg',
+        blogImage: '/images/Entertainment/entertainment_blog_image1.jpeg',
         blogCategory: 'Entertainment',
         blogPostType: [
 
@@ -1339,7 +1339,7 @@ const blog = [
         ],
         blogSlug: 'how-streaming-platforms-rewired-modern-entertainment-consumption',
         blogDate: currentDate,
-        authername: 'Monika Roy',
+        authorName: 'Monika Roy',
         frontView: [
 
             {
@@ -1551,7 +1551,7 @@ const blog = [
 
         /** Life Style */
         id: 7,
-        blogImage: '../../../../public/images/Lifestyle/lifestyle_blog_image1.jpeg',
+        blogImage: '/images/Lifestyle/lifestyle_blog_image1.jpeg',
         blogCategory: 'Lifestyle',
         blogPostType: [
 
@@ -1804,7 +1804,7 @@ const blog = [
 
         /** Hobbies */
         id: 8,
-        blogImage: '../../../../public/images/Hobbies/hobbies_blog_image1.jpg',
+        blogImage: '/images/Hobbies/hobbies_blog_image1.jpg',
         blogCategory: 'Hobbies',
         blogPostType: [
 
