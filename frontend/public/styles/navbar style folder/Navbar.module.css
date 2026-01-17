@@ -154,7 +154,8 @@ header > .innerNav{
 
     color: var(--hex_color5);
     gap: 15px;
-    box-shadow: 5px 5px 10px rgba(255, 217, 0, 0.336);
+    box-shadow: 5px 5px 5px #29292967;
+    border: 1px solid var(--hex_color5);
 
 }
 
@@ -164,17 +165,22 @@ header > .innerNav{
     bottom: 0;
     left: 0;
     z-index: -2;
-    width: 100%;
+    width: 300%;
     height: 0%;
     content: '';
     background-color: var(--hex_color4);
     transition: all 0.8s ease;
+    transform: rotate(-50deg) translate(-50px, -100%);
+    opacity: 0;
+    filter: blur(100px);
 
 }
 
 .contactSection > button:hover::after{
 
-    height: 100%;
+    height: 360%;
+    opacity: 1;
+    filter: blur(0px);
 
 }
 
@@ -264,7 +270,7 @@ header > .innerMobileNav{
 }
 
 /** Mobile Responsive */
-@media screen and (min-width: 375px) and (max-width: 1000px){
+@media screen and (min-width: 360px) and (max-width: 1000px){
 
     header{
 
@@ -317,6 +323,12 @@ header > .innerMobileNav{
 
     }
 
+    .mobileNavLogo h1 > span{
+
+        color: var(--hex_color6);
+
+    }
+
     /** Mobile Inner Navbar */
     .innerMobileNav > .innerMobileNav{
 
@@ -325,6 +337,7 @@ header > .innerMobileNav{
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        position: relative;
 
     }
 
@@ -336,6 +349,8 @@ header > .innerMobileNav{
         align-items: flex-end;
         justify-content: center;
         margin-right: 20px;
+        position: absolute;
+        z-index: 3;
 
     }
 
@@ -355,6 +370,150 @@ header > .innerMobileNav{
         width: 30px;
         height: 3px;
         background-color: var(--hex_color5);
+
+    }
+
+    /** Nav Menu Section */
+    .innerMobileNav > .mobileNavMenuSection{
+
+        position: fixed;
+        top: 0;
+        z-index: 2;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff00;
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    /** Navmenu Div */
+    .mobileNavMenuSection > .navMenuDiv{
+
+        width: 100%;
+        height: 60%;
+        background-color: #ffd9004b;
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+
+    }
+
+    .navMenuDiv > nav{
+
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+
+    }
+
+    .navMenuDiv nav > ul{
+
+        margin-left: 20px;
+        list-style-type: none;
+
+    }
+
+    .navMenuDiv ul > li{
+
+        margin-bottom: 10px;
+
+    }
+
+    .navMenuDiv ul li > a{
+
+        text-decoration: none;
+        color: var(--hex_color5);
+        font-size: 50px;
+        font-family: var(--font12);
+        letter-spacing: 2px;
+        display: inline-flex;
+        position: relative;
+
+    }
+
+    .navMenuDiv ul li > a::after{
+
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 50%;
+        height: 2px;
+        content: "";
+        background-color: var(--hex_color5);
+
+    }
+
+    /** Let's Talk Div */
+    .mobileNavMenuSection > .letsTalkDiv{
+
+        width: 100%;
+        height: 40%;
+        background-color: #2b2b2b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+
+    }
+
+    .letsTalkDiv > button{
+
+        height: 80px;
+        width: 400px;
+        border: none;
+        font-size: 30px;
+        font-family: var(--font12);
+        background-color: var(--hex_color6);
+        border-radius: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        cursor: pointer;
+
+    }
+
+    .letsTalkDiv button > svg{
+
+        color: var(--hex_color4);
+        box-shadow: 5px 5px 10px #292929;
+        background-color: #292929;
+        font-size: 30px;
+        padding: 10px;
+        border-radius: 50px;
+
+    }
+
+    /** Let's Talk Social Icon Div */
+    .letsTalkDiv > .mobileMenuSocialIcon{
+
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+    }
+
+    .mobileMenuSocialIcon > svg{
+
+        color: var(--hex_color5);
+        cursor: pointer;
+        background-color: var(--hex_color4);
+        width: 20px;
+        height: 20px;
+        font-size: 1px;
+        padding: 15px;
+        border-radius: 10px;
 
     }
 
