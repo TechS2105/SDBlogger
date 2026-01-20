@@ -1,0 +1,168 @@
+/** Main Section */
+main{
+
+    width: 100%;
+    height: 100%;
+
+}
+
+/** Desktop First Blog Main Section */
+.firstBlogMainSection{
+
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/** Desktop First Blog Inner Swiper Section */
+.firstBlogMainSection > .swiperFirstBlogInnerSection{
+
+    width: 93%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    gap: 10px;
+
+}
+
+/** Desktop First Blog Inner Swiper Slide Blog Box */
+.swiperSlideFirstBlogInnerSectionBlogBox{
+
+    width: 33.6%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+
+}
+
+/** Swiper Slide Inner Blog Box */
+.swiperSlideFirstBlogInnerSectionBlogBox > .innerSwiperSlideBlogBox{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+/** Desktop First Blog Inner Section Blog Image Box */
+.innerSwiperSlideBlogBox > .FirstBlogInnerSectionImageBox{
+
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+
+}
+
+.FirstBlogInnerSectionImageBox > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+
+}
+
+.innerSwiperSlideBlogBox:hover > .FirstBlogInnerSectionImageBox img{
+
+    transform: rotate(-5deg) scale(1.2);
+    filter: brightness(110%);
+
+}
+
+/** Desktop First Blog Inner Section Blog Contnet Box */
+.innerSwiperSlideBlogBox > .FirstBlogInnerSectionContentBox{
+
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.FirstBlogInnerSectionContentBox > p{
+
+    font-family: var(--font12);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding-left: 10px;
+
+}
+
+.FirstBlogInnerSectionContentBox > h4{
+
+    font-family: var(--font12);
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    position: relative;
+
+}
+
+.FirstBlogInnerSectionContentBox > h4::after{
+
+    position: absolute;
+    top: 68px;
+    left: 10px;
+    content: "";
+    width: 65%;
+    height: 2px;
+    background-color: var(--hex_color6);
+
+}
+
+/** Tablet Resposive */
+@media screen and (min-width: 800px) and (max-width: 1180px){
+
+    .FirstBlogInnerSectionContentBox > p{
+
+        font-size: 20px;
+
+    }
+
+    .FirstBlogInnerSectionContentBox > h4{
+
+        font-size: 30px;
+        line-height: 35px;
+        position: relative;
+        letter-spacing: 2px;
+
+    }
+
+    .FirstBlogInnerSectionContentBox > h4::after{
+
+        position: absolute;
+        top: 120px;
+        height: 4px;
+        width: 50%;
+        content: "";
+
+
+    }
+    
+}
+
+/** Mobile Responsive */
+@media screen and (min-width: 412px) and (max-width: 615px){
+
+   .firstBlogMainSection{
+
+        /* background-color: red; */
+        height: 20vh;
+
+   }
+
+}

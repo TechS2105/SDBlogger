@@ -13,7 +13,8 @@ const blog = [
     {
         /** Business */
         id: 1,
-        blogImage: '/images/Business/business_blog_image1.jpeg', 
+        blogImage: '/images/Business/business_blog_image1.jpeg',
+        blogImageAltText: 'Growth and Digital Transformation', 
         blogCategory: 'Business',
         blogPostType: [
 
@@ -284,6 +285,7 @@ const blog = [
         /** Technology */
         id: 2,
         blogImage: '/images/Technology/tech_blog_image1.jpeg',
+        blogImageAltText: 'Technology Insights',
         blogCategory: 'Technology',
         blogPostType: [
 
@@ -540,6 +542,7 @@ const blog = [
         /** Automotive */
         id: 3,
         blogImage: '/images/Automotive/automotive_blog_image1.jpeg',
+        blogImageAltText: 'Electric Mobility and Urban Transit Transformation',
         blogCategory: 'Automotive',
         blogPostType: [
 
@@ -793,6 +796,7 @@ const blog = [
         /** Science */
         id: 4,
         blogImage: '/images/Science/science_blog_image1.jpeg',
+        blogImageAltText: 'Science and Sustainability',
         blogCategory: 'Science',
         blogPostType: [
 
@@ -1045,6 +1049,7 @@ const blog = [
         /** Travel */
         id: 5,
         blogImage: '/images/Travel/travel_blog_image1.jpeg',
+        blogImageAltText: 'Travel Strategy Insights',
         blogCategory: 'Travel',
         blogPostType: [
 
@@ -1301,6 +1306,7 @@ const blog = [
         /** Entertainment */
         id: 6,
         blogImage: '/images/Entertainment/entertainment_blog_image1.jpeg',
+        blogImageAltText: 'Media & Digital Culture Insights',
         blogCategory: 'Entertainment',
         blogPostType: [
 
@@ -1552,6 +1558,7 @@ const blog = [
         /** Life Style */
         id: 7,
         blogImage: '/images/Lifestyle/lifestyle_blog_image1.jpeg',
+        blogImageAltText: 'Lifestyle & Modern Living Insights',
         blogCategory: 'Lifestyle',
         blogPostType: [
 
@@ -1805,6 +1812,7 @@ const blog = [
         /** Hobbies */
         id: 8,
         blogImage: '/images/Hobbies/hobbies_blog_image1.jpg',
+        blogImageAltText: 'Personal Growth Through Everyday Passions',
         blogCategory: 'Hobbies',
         blogPostType: [
 
