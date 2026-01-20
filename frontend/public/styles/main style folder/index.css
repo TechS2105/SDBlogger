@@ -5,6 +5,12 @@
 
 }
 
+html, body{
+
+    background-color: #ffffff;
+
+}
+
 /** Archivo Font */
 @font-face {
     font-family: 'Archivo-Black-Bold';
