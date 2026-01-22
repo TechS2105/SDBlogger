@@ -4,7 +4,7 @@ import axios from 'axios';
 /** Fetch Blogs Randomly */
 export const fetchAllBlogContents = createAsyncThunk('blogContent/fetchAllBlogContents', async() => {
 
-    const response = await axios.get('https://daily-blog-armf.onrender.com/api/allblogs/content');
+    const response = await axios.get('https://daily-blog-backend-m5of.onrender.com/api/allblogs/content');
     return response.data;
 
 });
