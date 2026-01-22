@@ -29,7 +29,6 @@ function Firstblogparentsection({HomeStyle}){
                 <div className="loadingSection">
     
                     <LuLoader />
-                    <p> Blogs are loading...</p>
     
                 </div>
     
