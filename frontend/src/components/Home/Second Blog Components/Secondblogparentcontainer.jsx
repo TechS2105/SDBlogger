@@ -1,67 +1,16 @@
-import React, {useState, useEffect} from 'react'; 
+import React, {useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {fetchAllBlogContents} from '../../../features/Blog Contents/BlogContentSlice';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import {Navigation} from 'swiper/modules';
-import {fetchAllBlogContents} from '../../../features/Blog Contents/BlogContentSlice'
-import {useSelector, useDispatch} from 'react-redux';
 import { LuLoader } from "react-icons/lu";
-import { PiMaskSadLight } from "react-icons/pi";
+import { PiMaskSad } from "react-icons/pi";
 
 function Secondblogparentcontainer({HomeStyle}){
-
-    const [activeIndex, setActiveIndex] = useState(null);
-    const [hoveredIndex, setHoveredIndex] = useState(null);
-
-    // Style Configurations
-    const activeTitleStyle = {
-        marginBottom: "20px",
-        transition: "all 0.8s ease"
-    };
-
-    const inactiveTitleStyle = {
-        marginBottom: "-150px",
-        transition: "all 0.8s ease",
-    };
-
-    const activeParaStyle = {
-        transform: "translateY(0px)",
-        transition: 'all 1s ease',
-        opacity: "1",
-        filter: "blur(0px)"
-    };
-
-    const inactiveParaStyle = {
-        transform: "translateY(300px)",
-        transition: 'all 1s ease',
-        filter: "blur(20px)",
-        opacity: "0"
-    };
-
-
-    const {items: blog, status} = useSelector((state) => state.blogContent);
+    
+    const {items: blogs, status} = useSelector((state) => state.blogContent);
     const dispatch = useDispatch();
-
-    /** Mouse Over */
-    function handleMouseOver(index){
-        if(window.innerWidth > 615){
-            setHoveredIndex(index);
-        }
-    }
-
-    /** Mouse Out */
-    function handleMouseOut(){
-        if(window.innerWidth > 615){
-            setHoveredIndex(null);
-        }
-    }
-
-    /** Handle Click Function For Mobile Devices */
-    function handleClick(index){
-        if(window.innerWidth < 615){
-            // Toggle active index
-            setActiveIndex(prevIndex => (prevIndex === index ? null : index));
-        }
-    }
 
     useEffect(() => {
 
@@ -77,7 +26,7 @@ function Secondblogparentcontainer({HomeStyle}){
 
         return(
 
-            <div className='loadingSection'>
+            <div className={HomeStyle.loadingSection}>
 
                 <LuLoader />
 
@@ -91,13 +40,13 @@ function Secondblogparentcontainer({HomeStyle}){
 
         return(
 
-            <div className='failedMessageSection'>
+            <div className={HomeStyle.failedMessageSection}>
 
-                <PiMaskSadLight />
-                <p> Something went wrong...</p>
+                <PiMaskSad />
+                <p> Something went wrong, please try again later... </p>
 
             </div>
-            
+
         );
 
     }
@@ -106,97 +55,84 @@ function Secondblogparentcontainer({HomeStyle}){
 
         <>
         
-            {/** Second Blog Parent Container */}
-            <div className={HomeStyle.secondBlogParentSection}>
+            {/** Second Blog Container */}
+            <div className={HomeStyle.homeSecondBlogContainer}>
 
-                {/** Inner Section */}
-                <div className={HomeStyle.secondBlogInnerSection}>
+                {/** Swiper Container */}
+                <Swiper 
 
-                    {/** Swiper Container */}
-                    <Swiper 
+                    speed={1000}
+                    loop={true}
+                    slidesPerView={1}
+                    navigation={{
+
+                        nextEl: '#next',
+                        prevEl: '#prev' 
+
+                    }}
+
+                    modules={[Navigation]}
+                    className={HomeStyle.homeSwiperContainer}
                     
-                        loop={true}
-                        slidesPerView={1}
-                        speed={1000}
+                >
 
-                        navigation={{
+                    {/** Swiper Slide Container */}
+                    {blogs.map((blogItem) => {
 
-                            nextEl: '#next',
-                            prevEl: '#prev',
+                        return(
 
-                        }}
+                            <SwiperSlide className={HomeStyle.homeSwiperSlideContainer}>
 
-                        modules={[Navigation]}
-                        className={HomeStyle.secondBlogSwiperContainer}
-                        
-                    >
+                                {/** Blog Category */}
+                                <div className={HomeStyle.homeSwiperSlideBlogCateogry}>
 
-                        {/** Swiper Slide Container */}
-                        {blog.map((blogItem, idx) => {
+                                    <span> {blogItem.blogCategory} </span>
 
-                            return(
+                                </div>
 
-                                <SwiperSlide 
-                                    className={HomeStyle.secondBlogSwiperSlideContainer} 
-                                    onMouseOver={() => handleMouseOver(idx)} 
-                                    onMouseOut={handleMouseOut} 
-                                    onClick={() => handleClick(idx)} 
-                                    key={idx}
-                                >
+                                {/** Image Section */}
+                                <div className={HomeStyle.homeSwiperSlideImageContainer}>
 
-                                    {/** Category Box */}
-                                    <div className={HomeStyle.secondBlogCategoryBox}>
+                                    {/** Image Overlay */}
+                                    <div className={HomeStyle.homeSwiperSlideImageOverlay}></div>
+                                    <img src={blogItem.blogImage} alt={blogItem.blogImageAltText} />
 
-                                        <span> {blogItem.blogCategory} </span>
+                                </div>
+                                
+                                {/** Blog Content Section */}
+                                <div className={HomeStyle.homeSwiperSlideBlogTextContainer}>
 
-                                    </div>
+                                    {/** Inner Content Box */}
+                                    <div className={HomeStyle.homeSwiperSlideInnerBlogBox}>
 
-                                    {/** Image Box */}
-                                    <div className={HomeStyle.secondBlogImageBox}>
-
-                                        {/** Image Overlay */}
-                                        <div className={HomeStyle.secondBlogImageOverlay}></div>
-                                        <img src={blogItem.blogImage} alt={blogItem.blogImageAltText} />
+                                        <b><span>{blogItem.blogDate}</span> / <span>{blogItem.authorName}</span></b>
+                                        <h2>{blogItem.frontView[0].blogFrontViewMainTitle}</h2>
+                                        <p>{blogItem.frontView[0].blogFrontViewShortDes.length > 20 ? blogItem.frontView[0].blogFrontViewShortDes.slice(0, 200) : blogItem.frontView[0].blogFrontViewShortDes}...</p>
 
                                     </div>
 
-                                    {/** Blog Details Box */}
-                                    <div className={HomeStyle.secondBlogDetailsBox}>
+                                </div>
 
-                                        <i><span>{blogItem.blogDate}</span> / <span>{blogItem.authorName}</span></i>
-                                        <h3 style={(hoveredIndex === idx || activeIndex === idx) ? activeTitleStyle : inactiveTitleStyle}> 
-                                            {blogItem.frontView[0].blogFrontViewMainTitle} 
-                                        </h3>
-                                        <p style={(hoveredIndex === idx || activeIndex === idx) ? activeParaStyle : inactiveParaStyle}>
-                                            {blogItem.frontView[0].blogFrontViewShortDes.length > 20 ? blogItem.frontView[0].blogFrontViewShortDes.slice(0, 100) : blogItem.frontView[0].blogFrontViewShortDes}...
-                                        </p>
+                            </SwiperSlide>  
 
-                                    </div>
+                        );
 
-                                </SwiperSlide>
+                    })}
 
-                            );
+                    {/** Blog Navigation Section */}
+                    <div className={HomeStyle.homeBlogNavigationSection}>
 
-                        })}
-                       
-
-                         {/** Navigation Box */}
-                        <div className={HomeStyle.navigationBox}>
+                        {/** Blog Navigation Inner Section */}
+                        <div className={HomeStyle.blogNavigationInnerSection}>
 
                             <span id='prev'>Previous</span>
                             <span id='next'>Next</span>
 
                         </div>
 
-                        {/** Mobile Responsive Navigation Section */}
-                        <div className={HomeStyle.mobileResponsiveNavigationSection}>
+                    </div>
 
-
-                        </div>
-
-                    </Swiper>
-
-                </div>
+                </Swiper>
 
             </div>
 
