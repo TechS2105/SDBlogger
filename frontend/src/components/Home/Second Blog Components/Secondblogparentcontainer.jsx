@@ -1,14 +1,113 @@
-import React, {useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {fetchAllBlogContents} from '../../../features/Blog Contents/BlogContentSlice';
+import React, {useState, useEffect} from 'react';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import {Navigation} from 'swiper/modules';
+import {useSelector, useDispatch} from 'react-redux';
+import {fetchAllBlogContents} from '../../../features/Blog Contents/BlogContentSlice';
 import { LuLoader } from "react-icons/lu";
 import { PiMaskSad } from "react-icons/pi";
+import { LiaArrowLeftSolid } from "react-icons/lia";
+import { LiaArrowRightSolid } from "react-icons/lia";
 
 function Secondblogparentcontainer({HomeStyle}){
-    
+
+    /** Animate Texts onMouseOver and Out Event */
+
+    // Configure Para Style
+    const[configureParaStyle, setConfigureParaStyle] = useState();
+
+    // Configure Title Style
+    const[configureTitleStyle, setConfigureTitleStyle] = useState({
+
+        transform: 'translateY(40px)',
+        margingBottom: '0px',
+        // width: '850px'
+
+    });
+
+    // Configure Span Style
+    const [configureSpanStyle, setConfigureSpanStyle] = useState({
+
+        transform: 'translateY(40px)'
+
+    });
+
+    const spanTransition = "transform 0.8s ease, opacity 1.5s ease 0.6s, filter 1.5s ease 0.6s"; // Span Transition Styl
+    const titleTransition = "transform 0.8s ease, width 0.8s ease, margin-bottom 0.8s ease, filter 1.5s ease 1.5s, opacity 1.5s ease 1.5s"; // Title Transition Style
+    const paraTransition = "transform 0.8s ease, opacity 1.5s ease 1.8s, filter 1.5s ease 1.8s"; // Para Transition Style
+
+    // Mouse Over Fuction
+    function handleSwiperSlideAnimeOnMouseOver(){
+
+        if(window.innerWidth > 800){
+
+            // Span Style
+            setConfigureSpanStyle({
+
+                transform: 'translateY(0px)',
+                transition: spanTransition
+
+            });
+
+            // Para Style
+            setConfigureParaStyle({
+
+                transform: 'translateY(0px)',
+                transition: paraTransition
+
+            });
+
+            // Title Style
+            setConfigureTitleStyle({
+
+                transform: 'translateY(0px)',
+                width: '1000px',
+                marginBottom: "20px",
+                transition: titleTransition
+
+            });
+
+        }
+
+    }
+
+    // Mouse Out Function 
+    function handleSwiperSlideAnimeOnMouseOut(){
+
+        if(window.innerWidth > 800){
+
+            // Span Style
+            setConfigureSpanStyle({
+
+                transform: 'translateY(40px)',
+                transition: spanTransition
+
+            });
+
+            // Para Style
+            setConfigureParaStyle({
+
+                transform: 'translateY(100px)',
+                transition: paraTransition
+
+            });
+
+            // Title Style
+            setConfigureTitleStyle({
+
+                transform: 'translateY(40px)',
+                marginBottom: "0px",
+                width: '850px',
+                transition: titleTransition
+
+            });
+
+        }
+
+    }
+
+
+    /** All Blogs */
     const {items: blogs, status} = useSelector((state) => state.blogContent);
     const dispatch = useDispatch();
 
@@ -26,7 +125,7 @@ function Secondblogparentcontainer({HomeStyle}){
 
         return(
 
-            <div className={HomeStyle.loadingSection}>
+            <div className='loadingSection'>
 
                 <LuLoader />
 
@@ -40,10 +139,10 @@ function Secondblogparentcontainer({HomeStyle}){
 
         return(
 
-            <div className={HomeStyle.failedMessageSection}>
-
+            <div className='failedMessageSection'>
+            
                 <PiMaskSad />
-                <p> Something went wrong, please try again later... </p>
+                <p> Something went woring...</p>
 
             </div>
 
@@ -55,84 +154,102 @@ function Secondblogparentcontainer({HomeStyle}){
 
         <>
         
-            {/** Second Blog Container */}
-            <div className={HomeStyle.homeSecondBlogContainer}>
+            {/** Second Blog Section */}
+            <div className={HomeStyle.secondBlogParentSection}>
 
-                {/** Swiper Container */}
-                <Swiper 
+                {/** Second Blog Inner Section */}
+                <div className={HomeStyle.secondBlogInnerSection}>
 
-                    speed={1000}
-                    loop={true}
-                    slidesPerView={1}
-                    navigation={{
+                    {/** Second Blog Swiper Container */}
+                    <Swiper 
 
-                        nextEl: '#next',
-                        prevEl: '#prev' 
+                        slidesPerView={1}
+                        loop={true}
+                        speed={1500}
+                        navigation={{
 
-                    }}
+                            nextEl: '#next',
+                            prevEl: '#prev'
 
-                    modules={[Navigation]}
-                    className={HomeStyle.homeSwiperContainer}
-                    
-                >
+                        }}
 
-                    {/** Swiper Slide Container */}
-                    {blogs.map((blogItem) => {
+                        modules = {[Navigation]}
+                        className={HomeStyle.secondBlogSwiperContainer}
+                        
+                    >
 
-                        return(
+                        {/** Second Blog Swiper Slide Container */}
+                        {blogs.map((blogItems) => {
 
-                            <SwiperSlide className={HomeStyle.homeSwiperSlideContainer}>
+                            return(
 
-                                {/** Blog Category */}
-                                <div className={HomeStyle.homeSwiperSlideBlogCateogry}>
+                                <SwiperSlide className={HomeStyle.secondBlogSwiperSlideContainer} key={blogItems.id} onMouseOver={handleSwiperSlideAnimeOnMouseOver} onMouseOut={handleSwiperSlideAnimeOnMouseOut}>
 
-                                    <span> {blogItem.blogCategory} </span>
+                                    {/** Category Box */}
+                                    <div className={HomeStyle.secondBlogSwiperSlideCategoryBox}>
 
-                                </div>
-
-                                {/** Image Section */}
-                                <div className={HomeStyle.homeSwiperSlideImageContainer}>
-
-                                    {/** Image Overlay */}
-                                    <div className={HomeStyle.homeSwiperSlideImageOverlay}></div>
-                                    <img src={blogItem.blogImage} alt={blogItem.blogImageAltText} />
-
-                                </div>
-                                
-                                {/** Blog Content Section */}
-                                <div className={HomeStyle.homeSwiperSlideBlogTextContainer}>
-
-                                    {/** Inner Content Box */}
-                                    <div className={HomeStyle.homeSwiperSlideInnerBlogBox}>
-
-                                        <b><span>{blogItem.blogDate}</span> / <span>{blogItem.authorName}</span></b>
-                                        <h2>{blogItem.frontView[0].blogFrontViewMainTitle}</h2>
-                                        <p>{blogItem.frontView[0].blogFrontViewShortDes.length > 20 ? blogItem.frontView[0].blogFrontViewShortDes.slice(0, 200) : blogItem.frontView[0].blogFrontViewShortDes}...</p>
+                                        <span> {blogItems.blogCategory} </span>
 
                                     </div>
 
-                                </div>
+                                    {/** Image Box */}
+                                    <div className={HomeStyle.secondBlogSwiperSlideImagebox}>
 
-                            </SwiperSlide>  
+                                        {/** Image Overlay */}
+                                        <div className={HomeStyle.secondBlogSwiperSlideImageOverlay}></div>
+                                        <img src={blogItems.blogImage} alt={blogItems.blogImageAltText} />
 
-                        );
+                                    </div>
 
-                    })}
+                                    {/** Content Box */}
+                                    <div className={HomeStyle.secondBlogSwiperSlideContentBox}>
 
-                    {/** Blog Navigation Section */}
-                    <div className={HomeStyle.homeBlogNavigationSection}>
+                                        {/** Inner Content Box  */}
+                                        <div className={HomeStyle.secondBlogSwiperSlideInnerContentBox}>
 
-                        {/** Blog Navigation Inner Section */}
-                        <div className={HomeStyle.blogNavigationInnerSection}>
+                                            <span style={configureSpanStyle}>{blogItems.blogDate} / {blogItems.authorName}</span>
+                                            <h2 style={configureTitleStyle}>{blogItems.frontView[0].blogFrontViewMainTitle}</h2>
+                                            <p style={configureParaStyle}>{blogItems.frontView[0].blogFrontViewShortDes.length > 20 ? blogItems.frontView[0].blogFrontViewShortDes.slice(0, 150) : blogItems.frontView[0].blogFrontViewShortDes}...</p>
 
-                            <span id='prev'>Previous</span>
-                            <span id='next'>Next</span>
+                                        </div>
+
+                                    </div>
+
+                                </SwiperSlide>
+
+                            );
+
+                        })}
+                        
+                        {/** Second Blog Swiper Slide Navigation Arrow Box */}
+                        <div className={HomeStyle.secondBlogSwiperSlideNavigationArrowBox}>
+
+                            {/** Inner Navigation Arrow Box */}
+                            <div className={HomeStyle.secondBlogSwiperSlideInnerNavigationArrowBox}>
+
+                                <span id='prev'>Previous</span>
+                                <span id='next'>Next</span>
+
+                            </div>
 
                         </div>
 
-                    </div>
+                        {/** Second Blog Swiper Slide Mobile View Navigation Arrow Box */}
+                        <div className={HomeStyle.secondBlogSwiperSlideMobileViewNavigationArrowBox}>
 
-                </Swiper>
+                            {/** Second Blog Swiper Slide Mobile View Inner Navigation Arrow Box */}
+                            <div className={HomeStyle.secondBlogSwiperSlideMobileViewInnerNavigationArrowBox}>
+
+                                <span id='prev'><LiaArrowLeftSolid /></span>
+                                <span id='next'><LiaArrowRightSolid /></span>
+                                
+                            </div>
+
+                        </div>
+
+                    </Swiper>
+
+                </div>
 
             </div>
 
