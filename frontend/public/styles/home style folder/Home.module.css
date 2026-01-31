@@ -129,7 +129,6 @@ main{
 
     width: 100%;
     height: 80vh;
-    /* background-color: antiquewhite; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,10 +140,8 @@ main{
 
     width: 93%;
     height: 100%;
-    /* background-color: aqua; */
     border-radius: 10px;
     corner-shape: round;
-    /* border: 2px solid gold; */
     overflow: hidden;
     
 }
@@ -294,7 +291,7 @@ main{
 .secondBlogSwiperSlideContentBox > .secondBlogSwiperSlideInnerContentBox{
 
     margin-left: 20px;
-    height: 80%;
+    height: 90%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -334,7 +331,7 @@ main{
     font-family: var(--font12);
     letter-spacing: 2px;
     font-size: 45px;
-    width: 850px;
+    width: 900px;
     line-height: 45px;
     margin-bottom: 20px;
     transform: scale(0);
@@ -388,7 +385,7 @@ main{
     right: 0;
     width: 40%;
     height: 15%;
-    background-color: #fff;
+    background-color: #ffffffff;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -499,6 +496,527 @@ main{
 .secondBlogSwiperSlideMobileViewInnerNavigationArrowBox span > svg{
 
     font-size: 50px;
+
+}
+
+/** Third Blog Parent Container */
+.thirdBlogParentContainer{
+
+    width: 100%;
+    height: 140vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/** Third Blog Inner Container */
+.thirdBlogParentContainer > .thirdBlogInnerContainer{
+
+    width: 93%;
+    height: 80%;
+
+}
+
+/** Third Blog Title Section */
+.thirdBlogInnerContainer > .thirdBlogTitleSection{
+
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 20px; */
+
+}
+
+.thirdBlogTitleSection > h2{
+
+    font-family: var(--font12);
+    font-size: 160px;
+    letter-spacing: 5px;
+    position: relative;
+
+}
+
+/** Third Blog Div */
+.thirdBlogInnerContainer > .thirdBlogMainDiv{
+
+    width: 100%;
+    height: 80%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 50px 0px 0px 0px;
+
+}
+
+/** Blog Grids */
+.thirdBlogMainDiv > .blogGrid{
+
+    overflow: hidden;
+    border-radius: 20px;
+    corner-shape: round;
+
+}
+
+/** First Blog Grid */
+.thirdBlogMainDiv > #blogGrid1{
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    cursor: pointer;
+
+}
+
+/** First Blog Grid Image Box */
+#blogGrid1 > .firstBlogGridImageBox{
+
+    width: 100%;
+    height: 60%;
+    background-color: #292929;
+    overflow: hidden;
+    border-radius: 20px;
+    corner-shape: round;
+
+}
+
+.firstBlogGridImageBox > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+
+}
+
+#blogGrid1:hover > .firstBlogGridImageBox img{
+
+    transform: translateX(-20px) scale(1.2);
+    filter: brightness(120%) sepia(2%);
+
+}
+
+/** First Blog Grid Content Box */
+#blogGrid1 > .firstBlogContentBox{
+
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.firstBlogContentBox > .firstBlogInnerContentBox{
+
+    margin-left: 10px;
+
+}
+
+.firstBlogInnerContentBox > p{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 10px;
+
+}
+
+.firstBlogInnerContentBox p > svg{
+
+    color: var(--hex_color5);
+    font-size: 20px;
+
+}
+
+.firstBlogInnerContentBox p > span{
+
+    font-size: 15px;
+    font-family: var(--font13);
+    letter-spacing: 1px;
+    display: inline-flex;
+
+}
+
+.firstBlogInnerContentBox > h3{
+
+    font-size: 30px;
+    line-height: 30px;
+    font-family: var(--font12);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+
+}
+
+.firstBlogInnerContentBox > h3:hover{
+
+    text-decoration: underline;
+
+}
+
+.firstBlogInnerContentBox > p{
+
+    font-family: var(--font13);
+    letter-spacing: 1px;
+    font-size: 15px;
+    line-height: 18px;
+    width: 650px;
+    margin-bottom: 20px;
+
+}
+
+.firstBlogInnerContentBox > a{
+
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+    text-decoration: none;
+    font-family: var(--font12);
+    color: var(--hex_color4);
+    letter-spacing: 1px;
+    background-color: var(--hex_color6);
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 0px 0px 50px 0px;
+    corner-shape: bevel;
+
+}
+
+.firstBlogInnerContentBox a > svg{
+
+    font-size: 20px;
+
+}
+
+/** Second Blog Grid */
+.thirdBlogMainDiv > #blogGrid2{
+
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+/** Second Blog Grid Image Box */
+#blogGrid2 > .secondBlogGridImageBox{
+
+    width: 40%;
+    height: 100%;
+    background-color: #292929;
+    overflow: hidden;
+    border-radius: 20px;
+    corner-shape: round;
+
+}
+
+.secondBlogGridImageBox > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+
+}
+
+#blogGrid2:hover > .secondBlogGridImageBox img{
+
+    transform: translateX(-20px) scale(1.2);
+    filter: brightness(120%) sepia(2%);
+
+}
+
+/** Second Blog Grid Content Box */
+#blogGrid2 > .secondBlogGridContentBox{
+
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+/** Second Blog Grid Inner Content Box */
+.secondBlogGridContentBox > .secondBlogGridInnerContentBox{
+
+    margin-left: 10px;
+
+}
+
+.secondBlogGridInnerContentBox > p{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+
+}
+
+.secondBlogGridInnerContentBox p > svg{
+
+    font-size: 20px;
+
+}
+
+.secondBlogGridInnerContentBox p > span{
+
+    font-family: var(--font13);
+    font-size: 15px;
+    letter-spacing: 1px;
+
+}
+
+.secondBlogGridInnerContentBox > h3{
+
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    font-family: var(--font12);
+    letter-spacing: 2px;
+
+}
+
+.secondBlogGridInnerContentBox > h3:hover{
+
+    text-decoration: underline;
+
+}
+
+.secondBlogGridInnerContentBox > p{
+
+    font-family: var(--font13);
+    font-size: 15px;
+    line-height: 18px;
+    width: 400px;
+    letter-spacing: 1px;
+
+}
+
+/** Third Blog Grid */
+.thirdBlogMainDiv > #blogGrid3{
+
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+/** Third Blog Grid Image Box*/
+#blogGrid3 > .thirdBlogGridImageBox{
+
+    width: 40%;
+    height: 100%;
+    border-radius: 20px;
+    corner-shape: round;
+    overflow: hidden;
+
+}
+
+.thirdBlogGridImageBox > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+
+}
+
+#blogGrid3:hover > .thirdBlogGridImageBox img{
+
+    transform: translateX(-20px) scale(1.2);
+    filter: brightness(120%) sepia(2%);
+
+}
+
+/** Third Blog Grid Content Box */
+#blogGrid3 > .thirdBlogGridContentBox{
+
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+/** Third Blog Inner Grid Content Box */
+.thirdBlogGridContentBox > .thirdBlogInnerContentBox{
+
+    margin-left: 20px;
+
+}
+
+.thirdBlogInnerContentBox > p{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 10px;
+
+}
+
+.thirdBlogInnerContentBox p > span{
+
+    font-family: var(--font13);
+    font-size: 15px;
+    letter-spacing: 1px;
+
+}
+
+.thirdBlogInnerContentBox p > svg{
+
+    font-size: 20px;
+
+}
+
+.thirdBlogInnerContentBox > h3{
+
+    font-size: 25px;
+    line-height: 30px;
+    font-family: var(--font12);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+
+}
+
+.thirdBlogInnerContentBox > h3:hover{
+
+    text-decoration: underline;
+
+}
+
+.thirdBlogInnerContentBox > p{
+
+    font-size: 15px;
+    line-height: 18px;
+    font-family: var(--font13);
+    letter-spacing: 1px;
+    width: 400px;
+
+}
+
+/** Fourth Blog Grid*/
+.thirdBlogMainDiv > #blogGrid4{
+
+    grid-column: 2/3;
+    grid-row: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+/** Fourth Blog Grid Image Box */
+#blogGrid4 > .fourthBlogGridImageBox{
+
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    corner-shape: round;
+
+}
+
+.fourthBlogGridImageBox > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+    transition: all 0.2s ease;
+
+}
+
+#blogGrid4:hover > .fourthBlogGridImageBox img{
+
+    transform: translateX(-20px) scale(1.2);
+    filter: brightness(120%) sepia(2%);
+
+}
+
+/** Fourth Blog Grid Content Box */
+#blogGrid4 > .fourthBlogGridContentBox{
+
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+/** Fourth Blog Grid Inner Content Box */
+.fourthBlogGridContentBox > .fourthBlogGridInnerContentBox{
+
+    margin-left: 20px;
+
+}
+
+.fourthBlogGridInnerContentBox > p{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 10px;
+
+}
+
+.fourthBlogGridInnerContentBox p > svg{
+
+    font-size: 20px;
+
+} 
+
+.fourthBlogGridInnerContentBox p > span{
+
+    font-family: var(--font13);
+    font-size: 15px;
+    letter-spacing: 1px;
+
+}
+
+.fourthBlogGridInnerContentBox > h3{
+
+    font-size: 25px;
+    font-family: var(--font12);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+
+}
+
+.fourthBlogGridInnerContentBox > h3:hover{
+
+    text-decoration: underline;
+
+}
+
+.fourthBlogGridInnerContentBox > p{
+
+    font-family: var(--font13);
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 18px;
 
 }
 
@@ -687,15 +1205,16 @@ main{
    .secondBlogSwiperSlideInnerContentBox > span{
 
         font-size: 12px;
+        margin-top: -25px;
 
    }
 
    .secondBlogSwiperSlideInnerContentBox > h2{
 
-    font-size: 20px;
-    line-height: 25px;
-    width: 350px;
-    margin-bottom: 50px;
+        font-size: 20px;
+        line-height: 25px;
+        width: 350px;
+        margin-bottom: 70px;
 
    }
 
@@ -723,37 +1242,37 @@ main{
    /** Second Blog SWiper Slide Wide Angle Navigation Box */
    .secondBlogSwiperContainer > .secondBlogSwiperSlideNavigationArrowBox{
 
-    display: none;
+        display: none;
 
    }
 
    /** Mobile Navigation Arrow */
    .secondBlogSwiperContainer > .secondBlogSwiperSlideMobileViewNavigationArrowBox{
 
-    display: flex;
-    height: 10%;
+        display: flex;
+        height: 10%;
 
    }
 
    .secondBlogSwiperSlideMobileViewNavigationArrowBox > .secondBlogSwiperSlideMobileViewInnerNavigationArrowBox{
 
-    gap: 10px;
+        gap: 10px;
 
    }
 
    .secondBlogSwiperSlideMobileViewInnerNavigationArrowBox > span{
 
-    width: 50px;
-    height: 50px;
-    border-radius: 20px;
-    corner-shape: scoop;
+        width: 50px;
+        height: 50px;
+        border-radius: 20px;
+        corner-shape: scoop;
 
    }
 
    .secondBlogSwiperSlideMobileViewInnerNavigationArrowBox span > svg{
 
-    font-size: 20px;
-    color: var(--hex_color5);
+        font-size: 20px;
+        color: var(--hex_color5);
 
    }
 

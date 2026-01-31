@@ -2,6 +2,7 @@ import React from 'react';
 import HomeStyle from '../../../public/styles/home style folder/Home.module.css';
 import FirstBlogParentSection from '../Home/Home First Swiper Blog Components/Firstblogparentsection';
 import SecondBlogParentSection from '../Home/Second Blog Components/Secondblogparentcontainer';
+import ThirdBlogParentSection from '../Home/Third Blog Components/Thirdblogcomponents';
 
 function Home(){
 
@@ -22,6 +23,13 @@ function Home(){
                 
                 {/** Second Blog Main Section */}
                 <SecondBlogParentSection
+                
+                    HomeStyle={HomeStyle}
+
+                />
+
+                {/** Third Blog Main Section */}
+                <ThirdBlogParentSection
                 
                     HomeStyle={HomeStyle}
 
