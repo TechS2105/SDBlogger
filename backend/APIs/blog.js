@@ -1,18 +1,11 @@
-const currentDate = (date = new Date()) => {
+const date = new Date();
+const currentDate = date.toLocaleDateString('en-us', {
 
-    return (
-        
-        date.toLocaleDateString('en-us', {
+    month: "short",
+    day:"2-digit",
+    month: "numeric"
 
-            month: 'short',
-            day: 'numeric',
-            year: 'numeric'
-
-        })
-
-    );
-
-}
+})
 
 const blog = [
 
