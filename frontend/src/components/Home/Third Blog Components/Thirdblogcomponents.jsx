@@ -4,10 +4,13 @@ import { LuCircleUserRound } from "react-icons/lu";
 import { RiArrowRightSLine } from "react-icons/ri";
 import {useSelector, useDispatch} from 'react-redux';
 import {fetchAllBlogContents} from '../../../features/Blog Contents/BlogContentSlice';
+import { LuLoader } from "react-icons/lu";
+import { PiMaskSad } from "react-icons/pi";
 
 function Thirdblogcomponents({HomeStyle}){
 
     const {items: blogs, status} = useSelector((state) => state.blogContent);
+    const reandomBlog = [...blogs].sort(() => (Math.random() - 0.5));
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -19,6 +22,35 @@ function Thirdblogcomponents({HomeStyle}){
         }
 
     }, [status, dispatch]);
+
+    if(status === 'loading'){
+
+        return(
+
+            <div className='loadingSection'>
+
+                <LuLoader />
+
+            </div>
+
+        );
+
+    }
+
+    if(status === 'failed'){
+
+        return(
+
+            <div className='failedMessageSection'>
+
+                <PiMaskSad />
+                <p> Something went wrong...</p>
+
+            </div>
+
+        );
+
+    }
 
     return(
 
@@ -40,137 +72,110 @@ function Thirdblogcomponents({HomeStyle}){
                     {/** Blog Div */}
                     <div className={HomeStyle.thirdBlogMainDiv}>
 
-                        {/** First Blog Container */}
-                        <div className={HomeStyle.blogGrid} id={HomeStyle.blogGrid1}>
+                        {reandomBlog && reandomBlog.length > 0 ? 
+                        
+                            reandomBlog.slice(0, 4).map((blogItem, index) => {
 
-                                    {/** Image Div */}
-                                    <div className={HomeStyle.firstBlogGridImageBox}>
+                                // Configure Custom Grid Style
+                                const configureStyle = [
 
-                                        <img src="../../../public/images/Automotive/automotive_blog_image1.jpeg" alt="" />
+                                    {
 
-                                    </div>
+                                        id: HomeStyle.blogGrid1,
+                                        blogGridImageStyle: HomeStyle.firstBlogGridImageBox, 
+                                        blogGridContentStyle: HomeStyle.firstBlogContentBox,
+                                        blogGridInnerContentStyle: HomeStyle.firstBlogInnerContentBox
 
-                                    {/** Content Div */}
-                                    <div className={HomeStyle.firstBlogContentBox}>
+                                    },
 
-                                        {/** Inner Content Box */}
-                                        <div className={HomeStyle.firstBlogInnerContentBox}>
+                                    {
 
-                                            <p>
-                                                
-                                                <SlCalender /><span>Jan 30, 2026</span>
-                                                <LuCircleUserRound /><span>Monalisha Sarkar</span>
-                                                
-                                            </p>
+                                        id: HomeStyle.blogGrid2,
+                                        blogGridImageStyle: HomeStyle.secondBlogGridImageBox,
+                                        blogGridContentStyle: HomeStyle.secondBlogGridContentBox,
+                                        blogGridInnerContentStyle: HomeStyle.secondBlogGridInnerContentBox
 
-                                            <h3>How Modern Businesses Turn Digital Strategy Into Profit</h3>
-                                            <p>In the last decade, companies pursued technology to stay modern. Today, the focus has shifted to profit. Businesses want to know how each digital investment impacts revenue, margins, customer retention, and scalability.</p>
+                                    },
 
-                                            <a href="#"> Read More <RiArrowRightSLine /></a>
+                                    {
 
-                                        </div>
+                                        id: HomeStyle.blogGrid3,
+                                        blogGridImageStyle: HomeStyle.thirdBlogGridImageBox,
+                                        blogGridContentStyle: HomeStyle.thirdBlogGridContentBox,
+                                        blogGridInnerContentStyle: HomeStyle.thirdBlogInnerContentBox
 
-                                    </div>
+                                    },
+    
+                                    {
 
-                        </div>
+                                        id: HomeStyle.blogGrid4,
+                                        blogGridImageStyle: HomeStyle.fourthBlogGridImageBox,
+                                        blogGridContentStyle: HomeStyle.fourthBlogGridContentBox,
+                                        blogGridInnerContentStyle: HomeStyle.fourthBlogGridInnerContentBox
 
-                        {/** Second Blog Container */}
-                        <div className={HomeStyle.blogGrid} id={HomeStyle.blogGrid2}>
+                                    }
 
-                                    {/** Image Div */}
-                                    <div className={HomeStyle.secondBlogGridImageBox}>
+                                ];
 
-                                        <img src="../../../public/images/Science/science_blog_image1.jpeg" alt="" />
+                                const style = configureStyle[index];
 
-                                    </div>
+                            return(
 
-                                    {/** Content Div */}
-                                    <div className={HomeStyle.secondBlogGridContentBox}>
-
-                                        {/** Content Inner Box */}
-                                        <div className={HomeStyle.secondBlogGridInnerContentBox}>
-
-                                            <p>
-
-                                                <SlCalender/><span>Jan 30, 2026</span>
-                                                <LuCircleUserRound/><span> Rohini Sarkar </span>
-
-
-                                            </p>
-
-                                            <h3>How AI Is Quietly Reshaping Core Business Operations</h3>
-                                            <p>AI is moving beyond experimentation and entering the operational backbone of companies. It is reshaping how...</p>
-
-                                        </div>
-
-                                    </div>
-
-                        </div>
-
-                        {/** Third Blog Container */}
-                        <div className={HomeStyle.blogGrid} id={HomeStyle.blogGrid3}>
-
-                                    {/** Image Box  */}
-                                    <div className={HomeStyle.thirdBlogGridImageBox}>
-
-                                        <img src="../../../public/images/Lifestyle/lifestyle_blog_image1.jpeg" alt="" />
-
-                                    </div>
-
-                                    {/** Blog Content Box */}
-                                    <div className={HomeStyle.thirdBlogGridContentBox}>
-
-                                        {/** Blog Inner Content Box */}
-                                        <div className={HomeStyle.thirdBlogInnerContentBox}>
-
-                                            <p>
-
-                                                <SlCalender/><span>Jan 31, 2026</span>
-                                                <LuCircleUserRound/><span>Rahul Sarkar</span>
-
-
-                                            </p>
-
-                                            <h3>The Future of Electric Mobility and How</h3>
-                                            <p>Electric mobility is entering a new phase of mainstream adoption. Its impact will redefine how people commute, how...</p>
-
-                                        </div>
-
-                                    </div>
-
-                        </div>
-
-                        {/** Foruth Blog Container */}
-                        <div className={HomeStyle.blogGrid} id={HomeStyle.blogGrid4}>
+                                <div className={HomeStyle.blogGrid} id={style.id} key={blogItem.id}>
 
                                     {/** Image Box */}
-                                    <div className={HomeStyle.fourthBlogGridImageBox}>
+                                    <div className={style.blogGridImageStyle}>
 
-                                        <img src="../../../public/images/Travel/travel_blog_image1.jpeg" alt="" />
+                                        <img src={blogItem.blogImage} alt={blogItem.blogImageAltText} />
 
                                     </div>
 
-                                    {/** Blog Content Box */}
-                                    <div className={HomeStyle.fourthBlogGridContentBox}>
+                                    {/** Content Box */}
+                                    <div className={style.blogGridContentStyle}>
 
-                                        {/** Blog Inner Content Box */}
-                                        <div className={HomeStyle.fourthBlogGridInnerContentBox}>
+                                        {/** Inner Content Box */}
+                                        <div className={style.blogGridInnerContentStyle}>
 
                                             <p>
 
-                                                <SlCalender/><span>Jan 31, 2026</span>
-                                                <LuCircleUserRound/><span>Monika Agarwal</span>
+                                                <SlCalender/><span>{blogItem.blogDate}</span>
+                                                <LuCircleUserRound/><span>{blogItem.authorName}</span>
 
                                             </p>
 
-                                            <h3>The Next Frontier in Renewable Energy: What</h3>
-                                            <p>Solar and wind reshaped the global energy map, but the future of renewable power depends on new sources that can....</p>
+                                            {index === 0 ? (
+
+                                                <h3>{blogItem.innerView[0].blogInnerViewMainTitle.length ? blogItem.innerView[0].blogInnerViewMainTitle.slice(0, 100) : blogItem.innerView[0].blogInnerViewMainTitle}</h3>
+
+                                            ) : (
+
+                                                <h3>{blogItem.innerView[0].blogInnerViewMainTitle.length ? blogItem.innerView[0].blogInnerViewMainTitle.slice(0,43) : blogItem.innerView[0].blogInnerViewMainTitle}...</h3>
+
+                                            )}
+
+                                            {index === 0 ? (
+
+                                                <p>{blogItem.innerView[0].blogInnerViewIntroDes[0].innerIntroFirstPara.length > 20 ? blogItem.innerView[0].blogInnerViewIntroDes[0].innerIntroFirstPara.slice(0, 200) : blogItem.innerView[0].blogInnerViewIntroDes[0].innerIntroFirstPara}...</p>
+
+                                            ) : (
+
+                                                <p>{blogItem.innerView[0].blogInnerViewIntroDes[0].innerIntroFirstPara.length > 20 ? blogItem.innerView[0].blogInnerViewIntroDes[0].innerIntroFirstPara.slice(0, 80) : blogItem.innerView[0].blogInnerViewIntroDes[0].innerIntroFirstPara}...</p>
+
+                                            )}
+
+                                            {index === 0 && 
+                                            
+                                                <a href="#">Read More <RiArrowRightSLine/></a>
+
+                                            }
 
                                         </div>
 
                                     </div>
 
-                        </div>            
+                                </div>
+
+                            )}) : null }      
 
                     </div>
 
