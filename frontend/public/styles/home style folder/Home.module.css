@@ -1485,7 +1485,7 @@ main{
    .thirdBlogParentContainer{
 
         width: 100%;
-        height: 200vh;
+        height: 230vh;
         margin-top: 20px;
 
    }
@@ -1514,14 +1514,20 @@ main{
    .thirdBlogInnerContainer > .thirdBlogMainDiv{
 
         height: 90%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
         padding-top: 0px;
+        gap: 1rem;
 
    }
 
    .thirdBlogMainDiv > .blogGrid{
 
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
    }
 
@@ -1529,30 +1535,183 @@ main{
    .thirdBlogMainDiv > #blogGrid1{
 
         grid-column-start: 1;
-        grid-column-end: 3;
+        grid-column-end: 4;
         grid-row-start: 1;
-        grid-row-end: 1; 
+        grid-row-end: -28    ; 
+
+   }
+
+   .firstBlogGridImageBox{
+
+        width: 100%;
+        height: 55%;
+
+   }
+
+   .firstBlogContentBox {
+
+        width: 100%;
+        height: 45%;
+
+   }
+
+   .firstBlogContentBox > .firstBlogInnerContentBox{
+
+        margin-left: 0px;
 
    }
 
    .firstBlogInnerContentBox > h3{
 
         font-size: 20px;
-        line-height: 20px;
+        width: 400px;
+        letter-spacing: 1px;
+        line-height: 25px;
 
    }
 
    .firstBlogInnerContentBox > p{
 
-        font-size: 10px;
+        font-size: 13px;
+        line-height: 15px;
+        width: 380px;
 
    }
 
    /** Blog Grid 2 */
    .thirdBlogMainDiv > #blogGrid2{
 
-        grid-column: 1 / 3;
-        grid-row: 2 / 2;
+        grid-column: 1 / 4;
+        grid-row: -2 / 3; 
+
+   }
+
+   #blogGrid2 > .secondBlogGridImageBox{
+
+        width: 100%;
+        height: 65%;
+
+   }
+
+   #blogGrid2 > .secondBlogGridContentBox{
+
+        width: 100%;
+        height: 45%;
+
+   }
+
+   .secondBlogGridContentBox > .secondBlogGridInnerContentBox{
+
+        margin-left: 0px;
+
+   }
+
+   .secondBlogGridInnerContentBox > h3{
+
+        font-size: 20px;
+        line-height: 25px;
+        width: 400px;
+        letter-spacing: 1px;
+
+   }
+
+   .secondBlogGridInnerContentBox > p{
+
+        font-size: 13px;
+        line-height: 15px;
+        width: 380px;
+
+   }
+
+   /** Third Blog Section Third Grid*/
+   .thirdBlogMainDiv > #blogGrid3{
+
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 5;
+
+   } 
+
+   #blogGrid3 > .thirdBlogGridImageBox{
+
+        width: 100%;
+        height: 65%;
+
+   }
+
+   #blogGrid3 > .thirdBlogGridContentBox{
+
+        width: 100%;
+        height: 45%;
+
+   }
+
+   .thirdBlogGridContentBox > .thirdBlogInnerContentBox{
+
+        margin-left: 0px;
+
+   }
+
+   .thirdBlogInnerContentBox > h3{
+
+        font-size: 20px;
+        line-height: 25px;
+        letter-spacing: 1px;
+        width: 400px;
+
+   }
+
+   .thirdBlogInnerContentBox > p{
+
+        font-size: 13px;
+        line-height: 15px;
+        width: 400px;
+
+   }
+
+   /** Blog Fourth Grid */
+   .thirdBlogMainDiv > #blogGrid4{
+
+        grid-column: 1 / 4;
+        grid-row: 5 / 9;
+
+   }
+
+   #blogGrid4 > .fourthBlogGridImageBox{
+
+        width: 100%;
+        height: 65%;
+
+   }
+
+   #blogGrid4 > .fourthBlogGridContentBox{
+
+        width: 100%;
+        height: 45%;
+
+   }
+
+   .fourthBlogGridContentBox > .fourthBlogGridInnerContentBox{
+
+        margin-left: 0px;
+
+   }
+
+   .fourthBlogGridInnerContentBox > h3{
+
+        font-size: 20px;
+        letter-spacing: 1px;
+        width: 400px;
+        line-height: 25px;
+
+   }
+   
+   .fourthBlogGridInnerContentBox > p{
+
+        font-size: 13px;
+        line-height: 15px;
+        width: 400px;
 
    }
 
