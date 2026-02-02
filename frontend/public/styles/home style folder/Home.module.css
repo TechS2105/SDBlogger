@@ -1500,13 +1500,30 @@ main{
    .thirdBlogInnerContainer > .thirdBlogTitleSection{
 
         height: 10%;
+        display: flex;
+        align-items: center;
+        /* background-color: #292929; */
 
    }
 
    .thirdBlogTitleSection > h2{
 
-        font-size: 35px;
+        font-size: 40px;
         letter-spacing: 2px;
+        position: relative;
+
+   }
+
+   .thirdBlogTitleSection > h2::after{
+
+        position: absolute;
+        top: 70px;
+        left: 0;
+        content: "";
+        width: 50%;
+        height: 5px;
+        border-radius: 50px;
+        background-color: var(--hex_color6);
 
    }
 
