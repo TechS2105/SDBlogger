@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import BrowseByTopicTitleSection from './Browsebytopictitlesection';
+import BrowseByTopicInnerTopicBoxSection from './Browsebytopicinnertopicboxsection';
 import { MdArrowForwardIos } from "react-icons/md";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import {useSelector, useDispatch} from 'react-redux';
@@ -73,90 +75,25 @@ function Browsebytopic({HomeStyle}){
                 <div className={HomeStyle.browseByTopicInnerContainer}>
 
                    {/** Title Section */}
-                   <div className={HomeStyle.browseByTopicTitleContainer}>
+                   <BrowseByTopicTitleSection
+                   
+                        HomeStyle={HomeStyle}
+                        topicTitle="Category"
 
-                        <h2> Category </h2>
-
-                   </div>
+                   />
 
                    {/** Topic Section */}
-                   <div className={HomeStyle.browseByTopicInnerTopicBoxSection}>
+                   <BrowseByTopicInnerTopicBoxSection
+                   
+                        HomeStyle={HomeStyle}
+                        handleHoverAnime={handleHoverAnime}
+                        handleUnhoverAnime={handleUnhoverAnime}
+                        isActiveIdx={isActiveIdx}
+                        defaultArrow={<MdArrowForwardIos/>}
+                        hoverableArrow={<IoArrowForwardOutline/>}
+                        blogs={blogs}
 
-                        {/** Topic Box */}
-                        {blogs.slice(0, 8).map((blogItem, idx) => {
-
-                            return(
-
-                                <div className={HomeStyle.browseByTopicSectionTopicBox} onMouseOver={() => handleHoverAnime(idx)} onMouseOut={handleUnhoverAnime} key={idx}>
-
-                                    <img 
-                                    
-                                        src={blogItem.blogImage} 
-                                        alt={blogItem.blogImageAltText} 
-                                        style={{
-
-                                            opacity: isActiveIdx === idx ? '1' : '0',
-                                            transition: 'all 0.5s ease'
-
-                                        }}
-                                        
-                                    />
-
-                                    {/** Topic Image Box */}
-                                    <div 
-                                        
-                                        className={HomeStyle.topicBoxImageDiv} 
-                                        style={{
-                                            
-                                            height: isActiveIdx === idx ? '0%' : '50%',
-                                            transition: 'all 0.5s ease'
-
-                                        }}
-                                        
-                                    >
-
-                                        <img 
-                                        
-                                            src={blogItem.blogImage} 
-                                            alt={blogItem.blogImageAltText} 
-                                            style={{
-                                                
-                                                transform: isActiveIdx === idx ? 'translateY(-200px)' : 'translateY(0px)',
-                                                transition: 'all 0.5s ease'
-
-                                            }}
-                                            
-                                        />
-
-                                    </div>
-
-                                    {/** Topic Content Box */}
-                                    <div 
-                                    
-                                        className={HomeStyle.topicBoxContentDiv} 
-                                        style={{
-                                            
-                                            height: isActiveIdx === idx ? '100%' : '50%',
-                                            transition: "all 0.5s ease"
-
-                                        }}
-                                        
-                                    >
-
-                                        <h3> {blogItem.blogCategory} </h3>
-                                        <p> {blogItem.frontView[0].blogFrontViewMainTitle} </p>
-                                        <a href="#">Explore Category <MdArrowForwardIos /> <IoArrowForwardOutline /></a>
-
-                                    </div>
-
-                                </div>
-
-                            );
-
-                        })}
-                     
-
-                   </div>
+                   />
 
                 </div>
 
