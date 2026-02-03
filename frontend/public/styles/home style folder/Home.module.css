@@ -525,7 +525,7 @@ main{
     height: 20%;
     display: flex;
     align-items: center;
-    /* margin-bottom: 20px; */
+    justify-content: center;
 
 }
 
@@ -534,6 +534,10 @@ main{
     font-family: var(--font12);
     font-size: 160px;
     letter-spacing: 5px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(180deg, var(--hex_color5), var(--hex_color4));
     position: relative;
 
 }
@@ -1017,6 +1021,268 @@ main{
     font-size: 15px;
     letter-spacing: 1px;
     line-height: 18px;
+
+}
+
+/** Browse By Topic Parent Container */
+.browseByTopicParentContainer{
+
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/** Browse By Topic Inner Container*/
+.browseByTopicParentContainer > .browseByTopicInnerContainer{
+
+    width: 93%;
+    height: 100%;
+
+}
+
+/** Browse By Topic Title Container */
+.browseByTopicInnerContainer > .browseByTopicTitleContainer{
+
+    width: 100%;
+    height: 20%;
+    background-image: linear-gradient(-50deg, var(--hex_color4), var(--hex_color4));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 180px 0px 180px 0px;
+    corner-shape: bevel;
+
+}
+
+.browseByTopicTitleContainer > h2{
+
+    font-size: 160px;
+    letter-spacing: 10px;
+    font-family: var(--font12);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(360deg, var(--hex_color4), var(--hex_color5));
+    text-align: center;
+    color: var(--hex_color4);
+
+}
+
+/** Browse By Topic Inner Topic Container Topic Box */
+.browseByTopicInnerContainer > .browseByTopicInnerTopicBoxSection{
+
+    width: 100%;
+    height: 80%;
+    padding: 20px 0px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+}
+
+.browseByTopicInnerTopicBoxSection > .browseByTopicSectionTopicBox{
+
+    width: 340px;
+    height: 290px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px #2929292a;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.browseByTopicSectionTopicBox > img{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.browseByTopicSectionTopicBox::before{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    height: 0%;
+    width: 100%;
+    z-index: 2;
+    background-color: #2929295a;
+    backdrop-filter: blur(1px);
+
+}
+
+.browseByTopicSectionTopicBox:hover::before{
+
+    height: 100%;
+
+}
+
+/** Topic Box Image Div */
+.browseByTopicSectionTopicBox > .topicBoxImageDiv{
+
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+
+}
+
+.topicBoxImageDiv > img{
+
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+/** Topic Box Content Div */
+.browseByTopicSectionTopicBox > .topicBoxContentDiv{
+
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+
+}
+
+.topicBoxContentDiv > h3{
+
+    font-size: 25px;
+    font-family: var(--font12);
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+
+}
+
+.topicBoxContentDiv > p{
+
+    font-size: 15px;
+    width: 300px;
+    font-family: var(--font13);
+    letter-spacing: 1px;
+
+}
+
+.topicBoxContentDiv > a{
+
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    text-decoration: none;
+    color: #292929;
+    font-family: var(--font12);
+    letter-spacing: 2px;
+    position: relative;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+    opacity: 0;
+
+}
+
+.browseByTopicSectionTopicBox:hover > .topicBoxContentDiv a{
+
+    transform: translateY(0px);
+    opacity: 1;
+
+}
+
+.topicBoxContentDiv > a::after{
+
+    position: absolute;
+    top: 25px;
+    left: 0;
+    content: "";
+    width: 0%;
+    height: 1px;
+    background-color: gold;
+    transition: all 0.8s ease;
+
+}
+
+.topicBoxContentDiv > a:hover::after{
+
+    width: 100%;
+
+}
+
+.topicBoxContentDiv a > svg:nth-child(1){
+
+    font-size: 15px;
+    position: absolute;
+    right: -20px;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s ease;
+
+}
+
+.topicBoxContentDiv a > svg:nth-child(2){
+
+    font-size: 17px;
+    position: absolute;
+    right: -20px;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.5s ease;
+
+
+}
+
+.topicBoxContentDiv a:hover > svg:nth-child(1){
+
+    transform: scale(0);
+    opacity: 0;
+
+}
+
+.topicBoxContentDiv a:hover:has(svg:nth-child(1)) > svg:nth-child(2){
+
+    transform: scale(1) translateX(10px);
+    opacity: 1;
+
+}
+
+.browseByTopicSectionTopicBox:hover > .topicBoxContentDiv h3{
+
+    color: var(--hex_color4);
+    background-color: var(--hex_color6);
+    padding: 0px 40px;
+    border-radius: 50px;
+    corner-shape: scoop;
+    font-size: 30px;
+
+}
+
+.browseByTopicSectionTopicBox:hover > .topicBoxContentDiv p{
+
+    color: var(--hex_color4);
+
+}
+
+.browseByTopicSectionTopicBox:hover > .topicBoxContentDiv a{
+
+    color: var(--hex_color4);
 
 }
 
