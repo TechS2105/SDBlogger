@@ -1286,6 +1286,327 @@ main{
 
 }
 
+/** Latest Post Parent Container */
+.latestPostParentContainer{
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/** Latest Post Inner Container */
+.latestPostParentContainer > .latestPostInnerContainer{
+
+    width: 93%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+
+}
+
+/** Latest Post Title Section */
+.latestPostInnerContainer > .latestPostTitleSection{
+
+    width: 35%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    /* border: 1px solid #292929; */
+
+}
+
+.latestPostTitleSection > h2{
+
+    font-size: 160px;
+    line-height: 150px;
+    color: var(--hex_color5);
+    font-family: var(--font12);
+    letter-spacing: 5px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to top, var(--hex_color4), var(--hex_color5));
+
+}
+
+.latestPostTitleSection > button{
+
+    width: 400px;
+    height: 50px;
+    border-radius: 0px 50px 00px 0px;
+    corner-shape: bevel;
+    border: none;
+    background-color: var(--hex_color6);
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+    color: var(--hex_color4);
+    font-family: var(--font12);
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s ease;
+    overflow: hidden;
+
+}
+
+.latestPostTitleSection button > span{
+
+    font-size: 20px;
+    display: inline-flex;
+    transition: all 0.2s ease;
+
+}
+
+.latestPostTitleSection > button::after{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    content: "";
+    background-color: var(--hex_color5);
+    z-index: -2;
+    transition: all 0.5s ease;
+
+}
+
+.latestPostTitleSection > button::before{
+
+    position: absolute;
+    top: 13px;
+    left: 20px;
+    content: "View All";
+    transform: translateY(30px);
+    transition: all 0.2s ease;
+    opacity: 0;
+    filter: blur(5px);
+
+}
+
+.latestPostTitleSection > button:hover::after{
+
+    width: 100%;
+
+}
+
+.latestPostTitleSection button > svg {
+
+    position: absolute;
+    left: 120px;
+    font-size: 20px;
+
+}
+
+.latestPostTitleSection button > svg:nth-child(2){
+
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s ease;
+
+}
+
+.latestPostTitleSection button > svg:nth-child(3){
+
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s ease;
+
+}
+
+.latestPostTitleSection button:hover > svg:nth-child(2){
+
+    opacity: 0;
+    transform: scale(0);
+
+}
+
+.latestPostTitleSection button:hover:has(svg:nth-child(2)) > svg:nth-child(3){
+
+    opacity: 1;
+    transform: scale(1) translateX(20px) rotate(360deg);
+    font-size: 25px;
+
+}
+
+.latestPostTitleSection > button:hover{
+
+    background-color: transparent;
+    color: gold;
+
+}
+
+.latestPostTitleSection button:hover > span{
+
+    transform: translateY(-35px);
+
+}
+
+.latestPostTitleSection > button:hover::before{
+
+    transform: translateY(0px);
+    opacity: 1;
+    filter: blur(0px);
+
+}
+
+/** Latest Post Section Inner Latest Post Main Section */
+.latestPostInnerContainer > .latestPostInnerMainSection{
+
+    width: 65%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 0px 50px;
+
+}
+
+/** Inner Latest Post Main Section Swiper Container */
+.latestPostInnerMainSection > .latestPostSwiperContainer{
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+/** Inner Latest Post Main Section Swiper Slide Container */
+.latestPostSwiperSlideContainer{
+
+    width: 400px;
+    height: 100%;
+    border-radius: 20px;
+    corner-shape: bevel;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+/** Inner Latest Post Main Section Swiper Slide Container Category Section */
+.latestPostSwiperSlideContainer > .latestPostSwiperSlidePostCategroyBox{
+
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    background-color: var(--hex_color4);
+    padding: 5px 50px;
+    border-radius: 50px;
+    corner-shape: round;
+
+}
+
+.latestPostSwiperSlidePostCategroyBox > span{
+
+    color: var(--hex_color5);
+    font-family: var(--font12);
+    font-size: 15px;
+    letter-spacing: 2px;
+
+
+}
+
+/** Inner Latest Post Main Section Swiper Slide Container Image Section */
+.latestPostSwiperSlideContainer > .latestPostSwiperSlideContainerImageSection{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.latestPostSwiperSlideContainerImageSection > img{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease;
+    transform: scale(1.2);
+
+}
+
+.latestPostSwiperSlideContainer:hover > .latestPostSwiperSlideContainerImageSection img{
+
+    transform: translateX(-20px) scale(1.2);
+
+}
+
+/** Inner Latest Post Main Section Swiper Slide Container Post Details Section */
+.latestPostSwiperSlideContainer > .latestPostSwiperSlideContainerPostDetailSection{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+/** Inner Latest Post Main Section Swiper Slide Container Post Detais Inner Section */
+.latestPostSwiperSlideContainerPostDetailSection > .latestPostSwiperSlideContainerPostDetailsInnerSection{
+
+    margin-left: 10px;
+
+}
+
+.latestPostSwiperSlideContainerPostDetailsInnerSection > span{
+
+    color: var(--hex_color4);
+    font-family: var(--font12);
+    letter-spacing: 1px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    display: inline-flex;
+
+}
+
+.latestPostSwiperSlideContainerPostDetailsInnerSection > h3{
+
+    width: 400px;
+    color: var(--hex_color4);
+    font-size: 25px;
+    font-family: var(--font12);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+
+}
+
+.latestPostSwiperSlideContainerPostDetailsInnerSection > p{
+
+    color: var(--hex_color4);
+    font-family: var(--font13);
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 1px;
+    width: 350px;
+
+}
+
 /** Tablet Resposive */
 @media screen and (min-width: 800px) and (max-width: 1180px){
 

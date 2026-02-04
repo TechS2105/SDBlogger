@@ -4,6 +4,7 @@ import FirstBlogParentSection from '../Home/Home First Swiper Blog Components/Fi
 import SecondBlogParentSection from '../Home/Second Blog Components/Secondblogparentcontainer';
 import ThirdBlogParentSection from '../Home/Third Blog Components/Thirdblogparentsection';
 import BrowseByTopicSection from '../Home/Browse By Topic Components/Browsebytopic';
+import LatestPostSection from '../Home/Latest Post Components/Latestpost';
 
 function Home(){
 
@@ -38,6 +39,13 @@ function Home(){
 
                 {/** Browse By Topic */}
                 <BrowseByTopicSection
+                
+                    HomeStyle={HomeStyle}
+
+                />
+
+                {/** Latest Post */}
+                <LatestPostSection
                 
                     HomeStyle={HomeStyle}
 
